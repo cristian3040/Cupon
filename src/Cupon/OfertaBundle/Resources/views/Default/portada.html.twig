@@ -1,0 +1,10 @@
+{% extends '::frontend.html.twig' %}
+{% block title %} Portada
+{% block id 'portada' %} {% endblock %}
+{% block article %}
+	{% include 'OfertaBundle:Default:includes/oferta.html.twig' %}
+{% endblock %}
+{% block aside %}  
+	<a href="{{ path('oferta', { 'slug': oferta.slug, 'ciudad': oferta.ciudad.slug }) }}">Oferta del día</a></li>
+	
+{% endblock %}
