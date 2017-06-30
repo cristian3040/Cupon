@@ -62,12 +62,14 @@ class __TwigTemplate_a7bc04e582869380c831a3c005ed9eabfec7d1efbe8ab5a914f24617252
         echo "\" />
 \t\t\t\t<label for=\"password\">Contraseña:</label>
 \t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" />
+\t\t\t\t<input type=\"checkbox\" id=\"no_cerrar\" name=\"_remember_me\" checked />
+\t\t\t\t<label for=\"no_cerrar\">No cerrar sesión</label>
 \t\t\t\t<input type=\"submit\" name=\"login\" value=\"Acceder\" />
 \t\t\t</form>
 \t\t";
     }
 
-    // line 16
+    // line 18
     public function block_aside($context, array $blocks = array())
     {
     }
@@ -84,7 +86,7 @@ class __TwigTemplate_a7bc04e582869380c831a3c005ed9eabfec7d1efbe8ab5a914f24617252
 
     public function getDebugInfo()
     {
-        return array (  71 => 16,  61 => 10,  55 => 8,  49 => 6,  46 => 5,  43 => 4,  37 => 3,  31 => 2,  11 => 1,);
+        return array (  73 => 18,  61 => 10,  55 => 8,  49 => 6,  46 => 5,  43 => 4,  37 => 3,  31 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -109,6 +111,8 @@ class __TwigTemplate_a7bc04e582869380c831a3c005ed9eabfec7d1efbe8ab5a914f24617252
 \t\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" />
 \t\t\t\t<label for=\"password\">Contraseña:</label>
 \t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" />
+\t\t\t\t<input type=\"checkbox\" id=\"no_cerrar\" name=\"_remember_me\" checked />
+\t\t\t\t<label for=\"no_cerrar\">No cerrar sesión</label>
 \t\t\t\t<input type=\"submit\" name=\"login\" value=\"Acceder\" />
 \t\t\t</form>
 \t\t{% endblock %}
