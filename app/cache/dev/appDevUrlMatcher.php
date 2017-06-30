@@ -171,6 +171,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Cupon\\UsuarioBundle\\Controller\\DefaultController::registroAction',  '_route' => 'usuario_registro',);
             }
 
+            // usuario_perfil
+            if ($pathinfo === '/usuario/perfil') {
+                return array (  '_controller' => 'Cupon\\UsuarioBundle\\Controller\\DefaultController::perfilAction',  '_route' => 'usuario_perfil',);
+            }
+
         }
 
         // tienda_homepage

@@ -78,6 +78,27 @@ class DefaultController extends Controller
                             array('formulario' => $formulario->createView()));
     }
 
+    public function perfilAction()
+    {
+        $usuario = $this->get('security.context')->getToken()->getUser();
+        $formulario = $this->createForm(new UsuarioType(), $usuario);
+        $peticion = $this->getRequest();
+        $formulario->handleRequest($peticion);
+        if ($formulario->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($usuario);
+            $em->flush();
+            $this->get('session')->getFlashBag()->add('info',
+                'Los datos de tu perfil se han actualizado correctamente'
+                );
+            return $this->redirect($this->generateUrl('usuario_perfil'));
+        }
+        return $this->render('UsuarioBundle:Default:perfil.html.twig', array(
+            'usuario' => $usuario,
+            'formulario' => $formulario->createView()
+            ));
+    }
+
 
 
 }
