@@ -75,7 +75,10 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ciudad_recientes", array("ciudad" => (isset($context["ciudadSeleccionada"]) ? $context["ciudadSeleccionada"] : $this->getContext($context, "ciudadSeleccionada")))), "html", null, true);
         echo "\">Ofertas recientes</a></li>
-\t\t\t\t\t<li><a href=\"#\">Mis ofertas</a></li>
+\t\t\t\t\t<li><a href=\"";
+        // line 18
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("usuario_compras");
+        echo "\">Mis ofertas</a></li>
 \t\t\t\t\t<li>";
         // line 19
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->controller("CiudadBundle:Default:listaCiudades", array("ciudad" => (isset($context["ciudadSeleccionada"]) ? $context["ciudadSeleccionada"] : $this->getContext($context, "ciudadSeleccionada")))));
@@ -130,7 +133,7 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
 
     public function getDebugInfo()
     {
-        return array (  115 => 30,  112 => 29,  109 => 28,  105 => 25,  102 => 24,  97 => 33,  95 => 28,  91 => 26,  89 => 24,  81 => 19,  76 => 17,  72 => 16,  66 => 13,  63 => 12,  60 => 11,  57 => 10,  53 => 9,  50 => 8,  44 => 6,  40 => 5,  35 => 4,  32 => 3,  11 => 2,);
+        return array (  118 => 30,  115 => 29,  112 => 28,  108 => 25,  105 => 24,  100 => 33,  98 => 28,  94 => 26,  92 => 24,  84 => 19,  80 => 18,  76 => 17,  72 => 16,  66 => 13,  63 => 12,  60 => 11,  57 => 10,  53 => 9,  50 => 8,  44 => 6,  40 => 5,  35 => 4,  32 => 3,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -160,7 +163,7 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
 \t\t\t\t<ul>
 \t\t\t\t\t<li><a href=\"{{ path('_portada') }}\">Oferta del día</a></li>
 \t\t\t\t\t<li><a href=\"{{ path('ciudad_recientes', { 'ciudad': ciudadSeleccionada }) }}\">Ofertas recientes</a></li>
-\t\t\t\t\t<li><a href=\"#\">Mis ofertas</a></li>
+\t\t\t\t\t<li><a href=\"{{ path('usuario_compras') }}\">Mis ofertas</a></li>
 \t\t\t\t\t<li>{{ render(controller('CiudadBundle:Default:listaCiudades', {'ciudad': ciudadSeleccionada} ))}}</li>
 \t\t\t\t</ul>
 \t\t\t</nav>
