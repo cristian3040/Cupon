@@ -28,7 +28,7 @@ class OfertaRepository extends EntityRepository
 		ORDER BY o.fechaPublicacion DESC';
 		
 		$consulta = $em->createQuery($dql);
-		$consulta->setParameter('fecha', '2017-06-22 00:00:00');
+		$consulta->setParameter('fecha', '2017-06-30 00:00:00');
 		$consulta->setParameter('ciudad', $ciudad);
 		$consulta->setMaxResults(1);
 		return $consulta->getSingleResult();
@@ -81,7 +81,7 @@ class OfertaRepository extends EntityRepository
 			ORDER BY o.fechaPublicacion DESC');
 		$consulta->setMaxResults(5);
 		$consulta->setParameter('id', $ciudad_id);
-		$consulta->setParameter('fecha', '2017-06-22 00:00:00');
+		$consulta->setParameter('fecha', '2017-06-30 00:00:00');
 		return $consulta->getResult();
 	}
 }

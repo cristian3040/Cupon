@@ -13,7 +13,7 @@ class DefaultController extends Controller
 
     public function comprasAction()
     {
-    	$usuario_id = 1;
+    	$usuario_id = 6;
     	$em = $this->getDoctrine()->getManager();
     	$compras = $em->getRepository('UsuarioBundle:Usuario')->findTodasLasCompras($usuario_id);
     	return $this->render('UsuarioBundle:Default:compras.html.twig', array('compras' => $compras));
