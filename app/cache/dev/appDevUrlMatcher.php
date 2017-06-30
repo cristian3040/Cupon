@@ -145,6 +145,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Cupon\\UsuarioBundle\\Controller\\DefaultController::comprasAction',  '_route' => 'usuario_compras',);
             }
 
+            if (0 === strpos($pathinfo, '/usuario/log')) {
+                if (0 === strpos($pathinfo, '/usuario/login')) {
+                    // usuario_login
+                    if ($pathinfo === '/usuario/login') {
+                        return array (  '_controller' => 'Cupon\\UsuarioBundle\\Controller\\DefaultController::loginAction',  '_route' => 'usuario_login',);
+                    }
+
+                    // usuario_login_check
+                    if ($pathinfo === '/usuario/login_check') {
+                        return array('_route' => 'usuario_login_check');
+                    }
+
+                }
+
+                // usuario_logout
+                if ($pathinfo === '/usuario/logout') {
+                    return array('_route' => 'usuario_logout');
+                }
+
+            }
+
         }
 
         // tienda_homepage

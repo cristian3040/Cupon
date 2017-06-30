@@ -80,37 +80,42 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
         // line 19
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->controller("CiudadBundle:Default:listaCiudades", array("ciudad" => (isset($context["ciudadSeleccionada"]) ? $context["ciudadSeleccionada"] : $this->getContext($context, "ciudadSeleccionada")))));
         echo "</li>
-\t\t\t\t\t
 \t\t\t\t</ul>
 \t\t\t</nav>
 \t\t</header>
 \t\t<article>
 \t\t\t";
-        // line 25
+        // line 24
         $this->displayBlock('article', $context, $blocks);
-        // line 27
+        // line 26
         echo "\t\t</article>
 \t\t\t<aside>
 \t\t\t\t";
-        // line 29
+        // line 28
         $this->displayBlock('aside', $context, $blocks);
-        // line 31
+        // line 33
         echo "\t\t\t</aside>
 \t";
     }
 
-    // line 25
+    // line 24
     public function block_article($context, array $blocks = array())
     {
-        // line 26
+        // line 25
         echo "\t\t\t";
     }
 
-    // line 29
+    // line 28
     public function block_aside($context, array $blocks = array())
     {
+        // line 29
+        echo "\t\t\t\t\t<section id=\"login\">
+\t\t\t\t\t\t";
         // line 30
-        echo "\t\t\t\t";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->controller("UsuarioBundle:Default:cajaLogin"));
+        echo "
+\t\t\t\t\t</section>
+\t\t\t\t";
     }
 
     public function getTemplateName()
@@ -125,7 +130,7 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
 
     public function getDebugInfo()
     {
-        return array (  113 => 30,  110 => 29,  106 => 26,  103 => 25,  98 => 31,  96 => 29,  92 => 27,  90 => 25,  81 => 19,  76 => 17,  72 => 16,  66 => 13,  63 => 12,  60 => 11,  57 => 10,  53 => 9,  50 => 8,  44 => 6,  40 => 5,  35 => 4,  32 => 3,  11 => 2,);
+        return array (  115 => 30,  112 => 29,  109 => 28,  105 => 25,  102 => 24,  97 => 33,  95 => 28,  91 => 26,  89 => 24,  81 => 19,  76 => 17,  72 => 16,  66 => 13,  63 => 12,  60 => 11,  57 => 10,  53 => 9,  50 => 8,  44 => 6,  40 => 5,  35 => 4,  32 => 3,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -157,7 +162,6 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
 \t\t\t\t\t<li><a href=\"{{ path('ciudad_recientes', { 'ciudad': ciudadSeleccionada }) }}\">Ofertas recientes</a></li>
 \t\t\t\t\t<li><a href=\"#\">Mis ofertas</a></li>
 \t\t\t\t\t<li>{{ render(controller('CiudadBundle:Default:listaCiudades', {'ciudad': ciudadSeleccionada} ))}}</li>
-\t\t\t\t\t
 \t\t\t\t</ul>
 \t\t\t</nav>
 \t\t</header>
@@ -167,6 +171,9 @@ class __TwigTemplate_e9c1828038196c56cc5113bb37c26028ba8328134d60f9291afc322e83c
 \t\t</article>
 \t\t\t<aside>
 \t\t\t\t{% block aside %}
+\t\t\t\t\t<section id=\"login\">
+\t\t\t\t\t\t{{ render(controller('UsuarioBundle:Default:cajaLogin')) }}
+\t\t\t\t\t</section>
 \t\t\t\t{% endblock %}
 \t\t\t</aside>
 \t{% endblock %}", "::frontend.html.twig", "C:\\inetpub\\wwwroot\\Cupon1\\app/Resources\\views/frontend.html.twig");

@@ -4,6 +4,7 @@ namespace Cupon\UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Cupon\CiudadBundle\Entity\Ciudad;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuario
@@ -11,7 +12,7 @@ use Cupon\CiudadBundle\Entity\Ciudad;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Cupon\UsuarioBundle\Entity\UsuarioRepository")
  */
-class Usuario
+class Usuario implements UserInterface
 {
    
     public function __construct()
@@ -396,6 +397,20 @@ class Usuario
     public function getCiudad()
     {
         return $this->ciudad;
+    }
+
+    function eraseCredentials()
+    {
+    }
+
+    function getRoles()
+    {
+        return array('ROLE_USUARIO');
+    }
+    
+    function getUsername()
+    {
+        return $this->getEmail();
     }
 
     public function __toString()

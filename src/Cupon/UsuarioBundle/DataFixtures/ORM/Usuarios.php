@@ -24,8 +24,8 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface
 			$usuario->setNombre($this->getNombre());
             $usuario->setApellidos($this->getApellidos());
             $usuario->setEmail('usuario'.$i.'@localhost');
-            $usuario->setPassword($this->getDni());
-			$usuario->setSalt($this->getDni());
+            $usuario->setPassword('usuario'.$i);
+			$usuario->setSalt(''); //Si la codificación es plaintext, salt debe estar a null para funcionar la autenticación.
             $usuario->setDni($this->getDni());
             $usuario->setNumeroTarjeta('1234567890123456');
             $usuario->setFechaAlta(new \DateTime('now - '.mt_rand(1, 150).' days'));

@@ -59,9 +59,9 @@ class __TwigTemplate_a7bc04e582869380c831a3c005ed9eabfec7d1efbe8ab5a914f24617252
 \t\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"";
         // line 10
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" /><br>\t
+        echo "\" />
 \t\t\t\t<label for=\"password\">Contraseña:</label>
-\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" /><br>
+\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" />
 \t\t\t\t<input type=\"submit\" name=\"login\" value=\"Acceder\" />
 \t\t\t</form>
 \t\t";
@@ -106,9 +106,9 @@ class __TwigTemplate_a7bc04e582869380c831a3c005ed9eabfec7d1efbe8ab5a914f24617252
 \t\t\t{% endif %}
 \t\t\t<form action=\"{{ path('usuario_login_check') }}\" method=\"post\">
 \t\t\t\t<label for=\"username\">Usuario:</label>
-\t\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" /><br>\t
+\t\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" />
 \t\t\t\t<label for=\"password\">Contraseña:</label>
-\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" /><br>
+\t\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" />
 \t\t\t\t<input type=\"submit\" name=\"login\" value=\"Acceder\" />
 \t\t\t</form>
 \t\t{% endblock %}
