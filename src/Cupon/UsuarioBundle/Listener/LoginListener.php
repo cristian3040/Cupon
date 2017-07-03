@@ -22,8 +22,14 @@ class LoginListener
 	public function onKernelResponse(FilterResponseEvent $event)
 	{
 		if (null != $this->ciudad) {
-			$portada = $this->router->generate('portada', array('ciudad' => $this->ciudad));
+			if($this->contexto->isGranted('ROLE_TIENDA')) {
+				$portada = $this->router->generate('extranet_portada');
+			}
+			else {
+				$portada = $this->router->generate('portada', array('ciudad' => $this->ciudad));
+			}
 			$event->setResponse(new RedirectResponse($portada));
+			$event->stopPropagation();
 		}
 	}
 

@@ -22,6 +22,7 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "twig/entensions" : "*"
+
     },
     "scripts": {
         "post-install-cmd": [

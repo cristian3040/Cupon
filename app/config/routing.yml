@@ -14,6 +14,10 @@ tienda:
     resource: "@TiendaBundle/Resources/config/routing.yml"
     prefix:   /
 
+extranet:
+    resource: "@TiendaBundle/Resources/config/extranet/routing.yml"
+    prefix:   /extranet
+
 #oferta:
  #   resource: "@OfertaBundle/Resources/config/routing.yml"
   #  prefix:   /

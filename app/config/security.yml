@@ -2,6 +2,15 @@
 security:
 
     firewalls:
+        extranet:
+            pattern: ^/extranet
+            provider: tiendas
+            anonymous: ~
+            form_login:
+                login_path: /extranet/login
+                check_path: /extranet/login_check
+            logout:
+                path: extranet_logout
         frontend:
             pattern: ^/*
             anonymous: ~
@@ -23,10 +32,16 @@ security:
         - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuario/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuario/*, roles: ROLE_USUARIO }
+        - { path: ^/extranet/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/extranet/*, roles: ROLE_TIENDA }
+
 
     providers:
         usuarios:
             entity: { class: Cupon\UsuarioBundle\Entity\Usuario, property: email }
+        tiendas:
+            entity: { class: Cupon\TiendaBundle\Entity\Tienda, property: login }
     
     encoders:
         Cupon\UsuarioBundle\Entity\Usuario: plaintext
+        Cupon\TiendaBundle\Entity\Tienda: plaintext

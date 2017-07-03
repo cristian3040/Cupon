@@ -183,6 +183,62 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'tienda_homepage')), array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\DefaultController::indexAction',));
         }
 
+        if (0 === strpos($pathinfo, '/extranet')) {
+            if (0 === strpos($pathinfo, '/extranet/log')) {
+                if (0 === strpos($pathinfo, '/extranet/login')) {
+                    // extranet_login
+                    if ($pathinfo === '/extranet/login') {
+                        return array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::loginAction',  '_route' => 'extranet_login',);
+                    }
+
+                    // extranet_login_check
+                    if ($pathinfo === '/extranet/login_check') {
+                        return array('_route' => 'extranet_login_check');
+                    }
+
+                }
+
+                // extranet_logout
+                if ($pathinfo === '/extranet/logout') {
+                    return array('_route' => 'extranet_logout');
+                }
+
+            }
+
+            // extranet_portada
+            if (rtrim($pathinfo, '/') === '/extranet') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'extranet_portada');
+                }
+
+                return array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::portadaAction',  '_route' => 'extranet_portada',);
+            }
+
+            if (0 === strpos($pathinfo, '/extranet/oferta')) {
+                // extranet_oferta_nueva
+                if ($pathinfo === '/extranet/oferta/nueva') {
+                    return array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::ofertaNuevaAction',  '_route' => 'extranet_oferta_nueva',);
+                }
+
+                // extranet_oferta_editar
+                if (0 === strpos($pathinfo, '/extranet/oferta/editar') && preg_match('#^/extranet/oferta/editar/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'extranet_oferta_editar')), array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::ofertaEditarAction',));
+                }
+
+                // extranet_oferta_ventas
+                if (0 === strpos($pathinfo, '/extranet/oferta/ventas') && preg_match('#^/extranet/oferta/ventas/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'extranet_oferta_ventas')), array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::ofertaVentasAction',));
+                }
+
+            }
+
+            // extranet_perfil
+            if ($pathinfo === '/extranet/perfil') {
+                return array (  '_controller' => 'Cupon\\TiendaBundle\\Controller\\ExtranetController::perfilAction',  '_route' => 'extranet_perfil',);
+            }
+
+        }
+
         // pagina_ayuda
         if (rtrim($pathinfo, '/') === '/ayuda') {
             if (substr($pathinfo, -1) !== '/') {

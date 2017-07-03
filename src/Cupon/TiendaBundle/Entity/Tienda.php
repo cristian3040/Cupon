@@ -4,6 +4,7 @@ namespace Cupon\TiendaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Cupon\OfertaBundle\Util\Util;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Tienda
@@ -11,7 +12,7 @@ use Cupon\OfertaBundle\Util\Util;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Cupon\TiendaBundle\Entity\TiendaRepository")
  */
-class Tienda
+class Tienda implements UserInterface
 {
     /**
      * @var integer
@@ -297,5 +298,19 @@ class Tienda
 
     public function __toString(){
         return $this->getNombre();
+    }
+
+    function eraseCredentials()
+    {
+    }
+
+    function getRoles()
+    {
+        return array('ROLE_TIENDA');
+    }
+
+    function getUsername()
+    {
+        return $this->getLogin();
     }
 }
