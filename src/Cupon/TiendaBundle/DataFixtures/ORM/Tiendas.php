@@ -22,9 +22,9 @@ class Tiendas extends AbstractFixture implements OrderedFixtureInterface
             for ($j = 1; $j <= $numeroTiendas; ++$j) {
                 $tienda = new Tienda();
 				$tienda->setNombre($this->getNombre());
-                $tienda->setLogin('tienda'.$i);
-                $tienda->setPassword('tienda'.$i);
-				$tienda->setSalt('tienda'.$i);
+                $tienda->setLogin('tienda'.$j);
+                $tienda->setPassword('tienda'.$j);
+				$tienda->setSalt('');
                 $tienda->setDescripcion($this->getDescripcion());
                 $tienda->setDireccion($this->getDireccion($ciudad));
                 $tienda->setCiudad($ciudad);
