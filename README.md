@@ -1,69 +1,18 @@
-Symfony Standard Edition
-========================
+Realización de la aplicación Cupon, explicada en el libro Desarrollo Web Ágil con Symfony2, de Javier Eguiluz.
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+Se han realizado y analizado los siguientes capítulos: 
+- Capítulo 1 Lo que debes saber antes de comenzar.
+- Capítulo 2 El proyecto.
+- Capítulo 3 Instalando y configurando Symfony2 y Sección 2 Frontend.
+- Capítulo 4 Creando las primeras páginas.
+- Capítulo 5 La base de datos.
+- Capítulo 6 Creando la portada.
+- Capítulo 7 Completando el frontend.
+- Capítulo 8 Registrando usuarios.
+- Capítulo 11 Tests unitarios y funcionales y Sección 3 Extranet.
+- Capítulo 12 Planificación.
+- Capítulo 13 Seguridad.
+- Capítulo 14 Creando la parte de administración.
+- Capítulo 15 Administrando las ofertas y Sección 4 Backend.
+- Capítulo 16 Planificación.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
-What's inside?
---------------
-
-The Symfony Standard Edition is configured with the following defaults:
-
-  * An AppBundle you can use to start coding;
-
-  * Twig as the only configured template engine;
-
-  * Doctrine ORM/DBAL;
-
-  * Swiftmailer;
-
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
-    library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/2.3/book/installation.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/2.3/book/doctrine.html
-[8]:  https://symfony.com/doc/2.3/book/templating.html
-[9]:  https://symfony.com/doc/2.3/book/security.html
-[10]: https://symfony.com/doc/2.3/cookbook/email.html
-[11]: https://symfony.com/doc/2.3/cookbook/logging/monolog.html
-[12]: https://symfony.com/doc/2.3/cookbook/assetic/asset_management.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html

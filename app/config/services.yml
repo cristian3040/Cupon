@@ -5,7 +5,7 @@ services:
             - { name: twig.extension }
     login_listener:
         class: Cupon\UsuarioBundle\Listener\LoginListener
-        arguments: [@router]
+        arguments: [@security.context, @router]
         tags:
             - { name: kernel.event_listener, event: security.interactive_login }
             - { name: kernel.event_listener, event: kernel.response }
@@ -14,3 +14,7 @@ services:
         arguments: ['@doctrine.orm.entity_manager', '@service_container']
         tags:
             - { name: security.voter }
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
